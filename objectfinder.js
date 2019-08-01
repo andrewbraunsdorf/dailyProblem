@@ -34,7 +34,7 @@ function find(array, value) {
   let output = [];
   // if (foobar.label === value) return foobar;
   for (var i = 0; i < array.length; i++) {
-    if (Object.values(array[i]).indexOf("foo") > -1) {
+    if (Object.values(array[i]).indexOf(value) > -1) {
       output.push(i);
     }
     // var result = find(foobar[i], value);
