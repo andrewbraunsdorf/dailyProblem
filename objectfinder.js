@@ -9,17 +9,17 @@ let key = "age";
 let value = 25;
 
 function returnIndex(array, key, value) {
-  // var output = [];
+  var output = [];
   for (var i = 0; i < array.length; i++) {
     if (array[i][key] == value) {
-      console.log(array[i]);
-      break;
+      // console.log(array[i]);
+      // break;
       //when multiple key matches
       // console.log(array[i]);
-      // output.push(i);
+      output.push(i);
     }
   }
-  //console.log(output);
+  console.log(output);
 }
 
 returnIndex(array, key, value);
