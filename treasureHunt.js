@@ -14,7 +14,7 @@
 
 let size = 10;
 let start = [2, 2];
-let instructions = [{ heading: "n", steps: 5 }, { heading: "e", steps: 3 }, { heading: "s", steps: 2 }, { heading: "w", steps: 1 }];
+let instructions = [{ heading: "s", steps: 8 }, { heading: "e", steps: 19 }, { heading: "s", steps: 2 }, { heading: "w", steps: 1 }];
 let currentPosition = start;
 
 // function size(int) {
@@ -28,25 +28,35 @@ function findTreasure(size, start, instructions) {
     if (instructions[instructionNumber].heading == "n") {
       //increment [0, X]
       currentPosition[1] += instructions[instructionNumber].steps
+      if (currentPosition[1] > size) {
+        currentPosition[1] = currentPosition[1] % size;
+      }
 
       console.log(currentPosition);
     }
     if (instructions[instructionNumber].heading == "s") {
       //increment [0, -X]
       currentPosition[1] -= instructions[instructionNumber].steps
-
+      if (currentPosition[1] < 0) {
+        currentPosition[1] = (currentPosition[1] % size) + size
+      }
       console.log(currentPosition);
     }
     if (instructions[instructionNumber].heading == "e") {
       //increment [x, 0]
       currentPosition[0] += instructions[instructionNumber].steps
+      if (currentPosition[0] > size) {
+        currentPosition[0] = currentPosition[0] % size;
+      }
 
       console.log(currentPosition);
     }
     if (instructions[instructionNumber].heading == "w") {
       //increment [-x, 0]
       currentPosition[0] -= instructions[instructionNumber].steps
-
+      if (currentPosition[0] < 0) {
+        currentPosition[0] = (currentPosition[0] % size) + size
+      }
       console.log(currentPosition);
     }
   }
