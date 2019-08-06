@@ -18,10 +18,6 @@ let instructions = [{ heading: "se", steps: 11 }];
 // let instructions = [{ heading: "s", steps: 8 }, { heading: "e", steps: 19 }, { heading: "s", steps: 2 }, { heading: "w", steps: 1 }];
 let currentPosition = start;
 
-// function size(int) {
-//   size = int * int;
-// }
-// let start = [];
 function findTreasure(size, start, instructions) {
 
   for (let instructionNumber = 0; instructionNumber < instructions.length; instructionNumber++) {
@@ -108,9 +104,6 @@ function findTreasure(size, start, instructions) {
       console.log(currentPosition);
     }
   }
-
-
-
   console.log(currentPosition);
 };
 findTreasure(size, start, instructions);
