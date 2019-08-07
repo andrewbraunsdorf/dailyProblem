@@ -138,6 +138,7 @@ let value2 = parseInt(parseString[2], 10);
 let answer = 0;
 
 function stringCalculator(input, operator, value1, value2) {
+
   switch (operator) {
     case "+":
       console.log(value1 + value2)
