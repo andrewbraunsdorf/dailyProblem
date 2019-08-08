@@ -5,6 +5,8 @@
 // array[0] represents the # of currect chars that are in code
 // array[1] represents the # of items in the correct position
 
+//accept an 8 charcode accept any numerical value
+
 function mastermind(guess, code) {
   let guessChars = guess.split('');
   let codeChars = code.split('');
