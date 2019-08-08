@@ -9,14 +9,32 @@ function mastermind(guess, code) {
   let guessChars = guess.split('');
   let codeChars = code.split('');
   let correctArray = [0, 0];
+  let minimum = Math.min(guessChars.length, codeChars.length);
 
-  for (let i = 0; i < guess.length; i++) {
+  for (let i = 0; i < minimum; i++) {
     if (guessChars[i] === codeChars[i]) {
-      correctArray[0]++;
+      correctArray[1]++;
     }
   }
-  console.log(correctArray);
 
+  for (let i = 0; i < minimum; i++) {
+    for (let j = 0; j < minimum; j++) {
+      if (guessChars[i] == codeChars[j]) {
+        codeChars[j] = ' ';
+        correctArray[0]++;
+      }
+    }
+  }
+
+  // for (let j = i; j < guess.length; j++) {
+  //   if (guessChars[j] == codeChars[i]) {
+  //     correctArray[0]++;
+  //   }
+  // }
+
+  console.log(correctArray);
 }
 
-mastermind("code", "code");
+mastermind("code321code", "code123");
+mastermind("2112", "1221");
+mastermind("1111", "1111");
