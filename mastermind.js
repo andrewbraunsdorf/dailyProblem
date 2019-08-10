@@ -7,6 +7,8 @@
 
 //accept an 8 charcode accept any numerical value
 
+const readline = require('readline');
+
 function mastermind(guess, code) {
   let guessChars = guess.split('');
   let codeChars = code.split('');
@@ -27,16 +29,31 @@ function mastermind(guess, code) {
       }
     }
   }
-
-  // for (let j = i; j < guess.length; j++) {
-  //   if (guessChars[j] == codeChars[i]) {
-  //     correctArray[0]++;
-  //   }
-  // }
-
   console.log(correctArray);
 }
 
-mastermind("code321code", "code123");
-mastermind("2112", "1221");
-mastermind("1111", "1111");
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+
+function numberOfGuesses(guesses) {
+  let guessCheck = 1;
+  do {
+    rl.question('Guess the secret password? ', (guess) => {
+      // TODO: Log the answer in a databasedoc
+      // console.log(`Thank you for your valuable feedback: ${guess}`);
+      mastermind(guess, "code123");
+      rl.close();
+    });
+    console.log(guessCheck);
+    guessCheck++;
+  }
+  while (guessCheck < guesses)
+}
+
+
+numberOfGuesses(4);
+// mastermind(guess, "code123");
+// mastermind("2112", "1221");
+// mastermind("1111", "1111");
