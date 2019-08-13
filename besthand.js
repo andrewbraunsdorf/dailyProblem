@@ -9,23 +9,41 @@
 let randomizedHand1 = [];
 let randomizedHand2 = [];
 
-function randomizeHands(numberOfCards) {
-  for (let i = 0; i < numberOfCards; i++) {
-    let player1Cards = {
-      suit: Math.floor(Math.random() * 4),
-      value: Math.floor(Math.random() * 13) + 2
-    }
-    let player2Cards = {
-      suit: Math.floor(Math.random() * 4),
-      value: Math.floor(Math.random() * 13) + 2
-    }
-    randomizedHand1.unshift(player1Cards);
-    randomizedHand2.unshift(player2Cards);
+// function randomizeHandsWithDuplicates(numberOfCards) {
+//   for (let i = 0; i < numberOfCards; i++) {
+//     let player1Cards = {
+//       suit: Math.floor(Math.random() * 4),
+//       value: Math.floor(Math.random() * 13) + 2
+//     }
+//     let player2Cards = {
+//       suit: Math.floor(Math.random() * 4),
+//       value: Math.floor(Math.random() * 13) + 2
+//     }
+//     randomizedHand1.unshift(player1Cards);
+//     randomizedHand2.unshift(player2Cards);
+//   }
+// }
+// randomizeHandsWithDuplicates(7);
+// console.log(randomizedHand1);
+// console.log(randomizedHand2);
+let deckOfCards = [];
+function createDeck() {
+  let deck = {
+    suits: [0, 1, 2, 3],
+    card: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
   }
+  for (i = 0; i < deck.suits.length; i++) {
+    for (j = 0; j < deck.card.length; j++) {
+      let object = {
+        suit: deck.suits[i],
+        card: deck.card[j]
+      }
+      deckOfCards.push(object);
+    }
+  }
+  console.log(deckOfCards)
 }
-randomizeHands(7);
-console.log(randomizedHand1);
-console.log(randomizedHand2);
+createDeck()
 
 function besthand(player1, player2) {
   let player1handvalue = 0;
