@@ -29,7 +29,8 @@ let randomizedHand2 = [];
 let deckOfCards = [];
 function createDeck() {
   let deck = {
-    suits: [0, 1, 2, 3],
+    // suits: [0, 1, 2, 3],
+    suits: ['Hearts', 'Diamonds', 'Clubs', 'Spades'],
     card: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14],
   }
   for (i = 0; i < deck.suits.length; i++) {
@@ -41,9 +42,42 @@ function createDeck() {
       deckOfCards.push(object);
     }
   }
-  console.log(deckOfCards)
+  var m = deckOfCards.length, t, i;
+
+  // While there remain elements to shuffle…
+  while (m) {
+
+    // Pick a remaining element…
+    i = Math.floor(Math.random() * m--);
+
+    // And swap it with the current element.
+    t = deckOfCards[m];
+    deckOfCards[m] = deckOfCards[i];
+    deckOfCards[i] = t;
+  }
+
+  // return deckOfCards;
+  console.log(deckOfCards);
 }
 createDeck()
+
+// function shuffle(deckOfCards) {
+//   var m = deckOfCards.length, t, i;
+
+//   // While there remain elements to shuffle…
+//   while (m) {
+
+//     // Pick a remaining element…
+//     i = Math.floor(Math.random() * m--);
+
+//     // And swap it with the current element.
+//     t = deckOfCards[m];
+//     deckOfCards[m] = deckOfCards[i];
+//     deckOfCards[i] = t;
+//   }
+
+//   return deckOfCards;
+// }
 
 function besthand(player1, player2) {
   let player1handvalue = 0;
@@ -61,8 +95,10 @@ function besthand(player1, player2) {
   console.log('And the winnner is ... ')
   if (player1handvalue > player2handvalue) {
     console.log('Player 1');
+  } if (player1handvalue < player2handvalue) {
+    console.log('Player 2')
   } else {
-    console.log('Player 2');
+    console.log("It's a tie");
   }
 }
 
