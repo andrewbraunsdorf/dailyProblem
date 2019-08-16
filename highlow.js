@@ -5,19 +5,18 @@
 let card = 7;
 
 function highlow(currentCard, guess) {
-  let nextCard = 8;
-  if (currentCard > nextCard && guess == 'high') {
-    console.log('Current card is', card);
-    console.log('Next card is', nextCard);
-    console.log('You lose!');
+  let nextCard = Math.floor(Math.random() * 13) + 2;
+  if (currentCard == nextCard) {
+    console.log('Play again');
   } else if (currentCard < nextCard && guess == 'high') {
     console.log('Current card is', card);
     console.log('Next card is', nextCard);
     console.log('You Win!');
-  } else if (currentCard == nextCard) {
-    console.log('Play again');
-  }
-  else if (currentCard < nextCard && guess == 'low') {
+  } else if (currentCard > nextCard && guess == 'high') {
+    console.log('Current card is', card);
+    console.log('Next card is', nextCard);
+    console.log('You lose!');
+  } else if (currentCard < nextCard && guess == 'low') {
     console.log('Current card is', card);
     console.log('Next card is', nextCard);
     console.log('You Lose!');

@@ -100,6 +100,7 @@ function besthand(player1, player2) {
   let player1handvalue = 0;
   let player2handvalue = 0;
 
+  // score += hand1[i]-hand2[i]
 
   for (let i = 0; i < player1.length; i++) {
     player1handvalue += player1[i].card
