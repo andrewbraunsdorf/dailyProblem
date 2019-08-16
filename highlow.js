@@ -15,6 +15,8 @@ function highlow(currentCard, guess) {
   };
 
   if (currentCard.value == nextCard.value) {
+    console.log('Play again, duplicate cards.');
+  } else if (currentCard.value == nextCard.value && currentCard.suit == nextCard.suit) {
     console.log('Play again');
   } else if (currentCard.value < nextCard.value && guess == 'high') {
     console.log('Current card is', currentCard.value);
