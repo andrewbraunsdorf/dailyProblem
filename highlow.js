@@ -2,26 +2,31 @@
 // inputs current card integer value at a card 2-10 11-14
 // Guess Accept either str ' high' or ' low' or 0 / 1 to represent high or low
 
-let card = 7;
+// let card = 7;
+let randomCard = {
+  suit: Math.floor(Math.random() * 4),
+  value: Math.floor(Math.random() * 13) + 2
+}
 
 function highlow(currentCard, guess) {
   let nextCard = Math.floor(Math.random() * 13) + 2;
-  if (currentCard == nextCard) {
+
+  if (currentCard.value == nextCard) {
     console.log('Play again');
-  } else if (currentCard < nextCard && guess == 'high') {
-    console.log('Current card is', card);
+  } else if (currentCard.value < nextCard && guess == 'high') {
+    console.log('Current card is', currentCard.value);
     console.log('Next card is', nextCard);
     console.log('You Win!');
-  } else if (currentCard > nextCard && guess == 'high') {
-    console.log('Current card is', card);
+  } else if (currentCard.value > nextCard && guess == 'high') {
+    console.log('Current card is', currentCard.value);
     console.log('Next card is', nextCard);
     console.log('You lose!');
-  } else if (currentCard < nextCard && guess == 'low') {
-    console.log('Current card is', card);
+  } else if (currentCard.value < nextCard && guess == 'low') {
+    console.log('Current card is', currentCard.value);
     console.log('Next card is', nextCard);
     console.log('You Lose!');
-  } else if (currentCard > nextCard && guess == 'low') {
-    console.log('Current card is', card);
+  } else if (currentCard.value > nextCard && guess == 'low') {
+    console.log('Current card is', currentCard.value);
     console.log('Next card is', nextCard);
     console.log('You Win!');
   } else {
@@ -29,7 +34,7 @@ function highlow(currentCard, guess) {
   }
 }
 
-highlow(card, 'low')
+highlow(randomCard, 'low')
   // if (guess == 'higher' || guess == 'high'){
   //   if (currentCard > guess) {
   //     'You Win!'
