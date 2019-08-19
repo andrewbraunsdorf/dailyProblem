@@ -11,12 +11,24 @@ function rolldice() {
   return roll;
 };
 
+
+
 function rollFiveDie() {
   let arrayOfRolls = [];
   for (let rollTimes = 0; rollTimes < 5; rollTimes++) {
     arrayOfRolls.push(rolldice())
   }
   console.log(arrayOfRolls);
+}
+
+function rolldiceThreeTimes() {
+  let dice = []
+  for (let eachDice = 0; eachDice < 3; eachDice++) {
+    // dice[eachDice] = dice.push(rollFiveDie());
+    // console.log(dice[eachDice]);
+    rollFiveDie();
+  }
+  // console.log(dice[0]);
 }
 
 
@@ -28,3 +40,4 @@ rolldice()
 // rolldice()
 
 rollFiveDie()
+rolldiceThreeTimes()
