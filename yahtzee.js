@@ -6,15 +6,25 @@
 // allow to roll a set number of dice
 // allow the player to roll the dice 3 times after each roll ask the player for dice to reroll and reroll the dice
 
-function rolldice(roll) {
-  roll = Math.floor(Math.random() * 6) + 1;
-  console.log(roll);
+function rolldice() {
+  let roll = Math.floor(Math.random() * 6) + 1;
+  return roll;
 };
 
+function rollFiveDie() {
+  let arrayOfRolls = [];
+  for (let rollTimes = 0; rollTimes < 5; rollTimes++) {
+    arrayOfRolls.push(rolldice())
+  }
+  console.log(arrayOfRolls);
+}
+
 
 rolldice()
-rolldice()
-rolldice()
-rolldice()
-rolldice()
-rolldice()
+// rolldice()
+// rolldice()
+// rolldice()
+// rolldice()
+// rolldice()
+
+rollFiveDie()
