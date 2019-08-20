@@ -50,6 +50,8 @@ function yahtzee() {
     console.log(`You want to roll ${answer} dice`);
 
     rl.close();
+
+    yahtzee();
   });
   // rl.question('Enter the dice you want to roll2', (answer) => {
   //   // TODO: Log the answer in a database
