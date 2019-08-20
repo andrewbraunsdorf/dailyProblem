@@ -50,7 +50,9 @@ function yahtzee() {
     console.log(`You want to roll ${answer} dice`);
 
     rl.close();
-
+    if (rollNumber < 4) {
+      rollArray = rerollDie(answer);
+    }
     yahtzee();
   });
   // rl.question('Enter the dice you want to roll2', (answer) => {
@@ -59,6 +61,32 @@ function yahtzee() {
 
   //   rl.close();
   // });
+}
+
+function rerollDie(answer) {
+  let arrayOfDice = answer.split("");
+  if (arrayOfDice.indexOf("1") > -1) {
+    rollArray[0] = rolldice();
+    console.log("1 rolled");
+  }
+  if (arrayOfDice.indexOf("2") > -1) {
+    rollArray[1] = rolldice();
+    console.log("2 rolled");
+  }
+  if (arrayOfDice.indexOf("3") > -1) {
+    rollArray[2] = rolldice();
+    console.log("3 rolled");
+  }
+  if (arrayOfDice.indexOf("4") > -1) {
+    rollArray[3] = rolldice();
+    console.log("4 rolled");
+  }
+  if (arrayOfDice.indexOf("5") > -1) {
+    rollArray[4] = rolldice();
+    console.log("5 rolled");
+  }
+
+  return rollArray;
 }
 
 // rolldice()
