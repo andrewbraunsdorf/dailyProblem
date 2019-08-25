@@ -32,11 +32,10 @@ function rolldiceThreeTimes() {
   for (let eachDice = 0; eachDice < 3; eachDice++) {
     rollFiveDie();
   }
-  // console.log(dice[0]);
 }
 function yahtzee() {
   rollNumber++;
-  if (rollNumber == 4) {
+  if (rollNumber === 4) {
     return 0;
   }
   const rl = readline.createInterface({
@@ -81,15 +80,5 @@ function rerollDie(answer) {
 
   return rollArray;
 }
-
-// rolldice()
-// // rolldice()
-// // rolldice()
-// // rolldice()
-// // rolldice()
-// // rolldice()
-
-// rollFiveDie()
-// rolldiceThreeTimes()
 
 yahtzee();
