@@ -30,8 +30,6 @@ function rollFiveDie() {
 function rolldiceThreeTimes() {
   let dice = [];
   for (let eachDice = 0; eachDice < 3; eachDice++) {
-    // dice[eachDice] = dice.push(rollFiveDie());
-    // console.log(dice[eachDice]);
     rollFiveDie();
   }
   // console.log(dice[0]);
@@ -54,13 +52,8 @@ function yahtzee() {
       rollArray = rerollDie(answer);
     }
     yahtzee();
+    console.log(rollArray);
   });
-  // rl.question('Enter the dice you want to roll2', (answer) => {
-  //   // TODO: Log the answer in a database
-  //   console.log(`You want to roll ${answer} dice`);
-
-  //   rl.close();
-  // });
 }
 
 function rerollDie(answer) {
