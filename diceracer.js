@@ -22,4 +22,11 @@ function createDeck() {
   console.log(deckOfCards);
 }
 
+function rolldice() {
+  let roll = Math.floor(Math.random() * 6) + 1;
+  console.log("You rolled a " + roll);
+  return roll;
+};
+
+rolldice();
 createDeck();
