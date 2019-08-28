@@ -42,7 +42,7 @@ function createDeck() {
   let deckBad = {
     // suits: [0, 1, 2, 3],
     suits: ['Hearts', 'Diamonds', 'Clubs', 'Spades'],
-    card: [3, 4, 5],
+    card: [1, 2, 6, 7],
   }
   for (let i = 0; i < deckBad.suits.length; i++) {
     for (j = 0; j < deckBad.card.length; j++) {
@@ -112,5 +112,17 @@ function rolldice() {
   return roll;
 };
 
-rolldice();
-createDeck();
+let deck = createDeck();
+let player1Position = -1;
+let player2Position = -1;
+
+// function deckRacer() {
+//   let rollCounter = 0;
+//   for (let rolls = 0; rolls < deck.length; rolls++) {
+//     if (rolldice() < deck.value)
+//       rollCounter++;
+//   }
+//   console.log(rollCounter);
+
+// }
+// deckRacer();
