@@ -112,24 +112,85 @@ function rolldice() {
   return roll;
 };
 
-let deck = createDeck();
-let player1Position = -1;
+createDeck();
+var player1Position = -1;
 let player2Position = -1;
 
 function deckRacer() {
   // createDeck();
   let rollCounter = 0;
-  let diceRoll = rolldice();
-  while (player1Position <= 28) {
-    for (let rolls = 0; rolls < diceRoll; rolls++) {
-      if (deckOfCards[rolls].value < diceRoll)
-        // if (diceRoll < deckOfCards[rolls].value)
-        rollCounter++;
+  // let diceRoll = rolldice();
+  let i = 0;
+  // while ((player1Position || player2Position) <= 28) {
+  // console.log(diceRoll);
+  while (player1Position <= 27 && i <= 27) {
+    let diceRoll = rolldice();
+    if (diceRoll < deckOfCards[0].card || diceRoll == deckOfCards[0].card) {
+      console.log(diceRoll);
       player1Position++;
+      i++;
     }
-    console.log(rollCounter);
+    else {
+      console.log(diceRoll <= deckOfCards[i].card);
+      while (diceRoll < deckOfCards[i].card || diceRoll == deckOfCards[i].card) {
+        player1Position += 1;
+        i++;
+      }
+    }
+    // for (let rolls = 0; rolls < diceRoll; rolls++) {
+    //   // if (deckOfCards[rolls].value < diceRoll)
+    //   if (diceRoll < deckOfCards[rolls].value)
+    //     rollCounter++;
+    //   player1Position++;
+    // }
+    // console.log(rollCounter);
     console.log(player1Position);
-    deckRacer();
+    console.log(i);
+    // deckRacer();
   }
 }
 deckRacer();
+
+// const deckRacer2 = () => {
+//   let deck = createDeck();
+
+
+//   //   keep track of how far along player is through deck (gameboard)
+//   let playerOnePosition = -1;
+//   let playerTwoPosition = -1;
+
+//   //   keep track of how many rolls each player takes
+//   let playerOneTotalRolls = 0;
+//   let playerTwoTotalRolls = 0;
+
+//   //   the size of our dice to roll
+//   let diceSize = 6;
+
+//   // loop threw the deck until a player has reached the last card (card 27)
+//   for (let j = 1; j < deckOfCards.length; j++) {
+//     while (playerTwoPosition < 27 && playerOnePosition < 27) {
+//       let firstRoll = rolldice();
+//       let secondRoll = rolldice();
+
+//       console.log("Player one roll: ", firstRoll);
+//       console.log("Player one position", playerOnePosition);
+
+//       console.log("Player two roll: ", secondRoll);
+//       console.log("Player two position", playerTwoPosition);
+
+//       //   if the current player one/two roll is greater than the current card value than we increase the position by the card index
+//       //   if not greater than we increase the rolls, and try again
+//       if (firstRoll >= deckOfCards[j]) {
+//         playerOnePosition += j;
+//       } else if (firstRoll < deckOfCards[j]) {
+//         playerOneTotalRolls++;
+//       }
+//       if (secondRoll >= deckOfCards[j]) {
+//         playerTwoPosition += j;
+//       } else if (secondRoll < deckOfCards[j]) {
+//         playerTwoTotalRolls++;
+//       }
+//     }
+//   }
+// }
+// deckRacer2();
