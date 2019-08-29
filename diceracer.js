@@ -116,13 +116,20 @@ let deck = createDeck();
 let player1Position = -1;
 let player2Position = -1;
 
-// function deckRacer() {
-//   let rollCounter = 0;
-//   for (let rolls = 0; rolls < deck.length; rolls++) {
-//     if (rolldice() < deck.value)
-//       rollCounter++;
-//   }
-//   console.log(rollCounter);
-
-// }
-// deckRacer();
+function deckRacer() {
+  // createDeck();
+  let rollCounter = 0;
+  let diceRoll = rolldice();
+  while (player1Position <= 28) {
+    for (let rolls = 0; rolls < diceRoll; rolls++) {
+      if (deckOfCards[rolls].value < diceRoll)
+        // if (diceRoll < deckOfCards[rolls].value)
+        rollCounter++;
+      player1Position++;
+    }
+    console.log(rollCounter);
+    console.log(player1Position);
+    deckRacer();
+  }
+}
+deckRacer();
