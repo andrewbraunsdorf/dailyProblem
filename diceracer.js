@@ -129,7 +129,6 @@ function deckRacer() {
     if (rollCounter % 2 === 0) {
       if (diceRoll < deckOfCards[0].card || diceRoll == deckOfCards[0].card) {
         console.log(diceRoll);
-        console.log("Player 1 Position");
         player1Position++;
         i++;
         rollCounter++;
@@ -145,7 +144,6 @@ function deckRacer() {
     } else {
       if (diceRoll < deckOfCards[0].card || diceRoll == deckOfCards[0].card) {
         console.log(diceRoll);
-        console.log("Player 2 Position");
         player2Position++;
         j++;
         rollCounter++;
@@ -153,7 +151,6 @@ function deckRacer() {
       else {
         // console.log(diceRoll <= deckOfCards[i].card);
         while (diceRoll < deckOfCards[j].card || diceRoll == deckOfCards[j].card) {
-          console.log("Player 2 Position");
           player2Position += 1;
           j++;
           rollCounter++;
@@ -167,8 +164,10 @@ function deckRacer() {
     //   player1Position++;
     // }
     // console.log(rollCounter);
-    console.log(player1Position);
-    console.log(i);
+    console.log("Player 1 position:" + player1Position);
+    console.log("Player 1 i position:" + i);
+    console.log("Player 2 position:" + player2Position);
+    console.log("Player 2 j position:" + j);
     // deckRacer();
   }
 }
