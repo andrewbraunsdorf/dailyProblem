@@ -43,13 +43,15 @@ function numberOfGuesses(guesses) {
     rl.question('Guess the secret password? ', (guess) => {
       // TODO: Log the answer in a databasedoc
       // console.log(`Thank you for your valuable feedback: ${guess}`);
-      mastermind(guess, "code123");
+      mastermind(guess, "1212");
+      // mastermind(guess, "code123");
       rl.close();
     });
     console.log(guessCheck);
     guessCheck++;
   }
   while (guessCheck < guesses)
+
 }
 
 
