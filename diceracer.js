@@ -38,6 +38,7 @@ function createDeck() {
   }
 
   tempDeckOfGoodCards = deckOfCards.slice(0, 4);
+  deckOfCards.slice(0, 4);
 
   let deckBad = {
     // suits: [0, 1, 2, 3],
