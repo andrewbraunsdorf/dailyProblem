@@ -18,8 +18,8 @@ function calculateInterest(principal, numberofmonths, monthlypercentinterest, de
   let totalWithWithdrawal = totalWithDeposits + withdrawalWithPeriodicWithdrawal;
   console.log(compoundInterest);
   console.log(compoundInterestOfDeposits);
-  console.log(total);
+  console.log(totalWithDeposits);
 
   console.log(totalWithWithdrawal);
 }
-calculateInterest(5000, 120, 5, 50, 12, 100, 12);
+calculateInterest(5000, 36, 5, 0, 0, 0, 0);
