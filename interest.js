@@ -22,4 +22,4 @@ function calculateInterest(principal, numberofmonths, monthlypercentinterest, de
 
   console.log(totalWithWithdrawal);
 }
-calculateInterest(5000, 36, 5, 0, 0, 0, 0);
+calculateInterest(1000, 36, 5, 100, 12, 0, 0);
