@@ -13,9 +13,9 @@ function calculateInterest(principal, numberofmonths, monthlypercentinterest, de
 
   let withdrawalWithPeriodicWithdrawal = -withdrawalAmount * ((periodicWithdrawal / 12) * ((interestCalculation / monthlyInterest))) * (1 + monthlyInterest);
 
-  let total = principal + compoundInterest + compoundInterestOfPeriodicDeposits;
+  let totalWithDeposits = principal + compoundInterest + compoundInterestOfPeriodicDeposits;
 
-  let totalWithWithdrawal = total + withdrawalWithPeriodicWithdrawal;
+  let totalWithWithdrawal = totalWithDeposits + withdrawalWithPeriodicWithdrawal;
   console.log(compoundInterest);
   console.log(compoundInterestOfDeposits);
   console.log(total);
