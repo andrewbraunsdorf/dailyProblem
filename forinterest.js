@@ -65,6 +65,4 @@ function withdrawl(deposit, month, withdrawl, monthWithdrawl) {
   }
 }
 
-// deposit(100);
 withdrawl(100, 1, 50, 1);
-
